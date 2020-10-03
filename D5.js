@@ -161,7 +161,7 @@ const WhatDayIsIt = () => {
 function RollTheDices(x) {
   let ret ={
       values:[],
-      sum:[]
+      sum:0
     }
   for(i = 0; i < x; i++){
      num = Dice()
@@ -170,7 +170,7 @@ function RollTheDices(x) {
   let sum = ret.values.reduce(function(a, b){
     return a + b;
     }, 0);
-  ret.sum.push(sum)
+  ret.sum = sum
 
   return ret
 }
@@ -221,7 +221,7 @@ function IsTodayMyBDay() {
 /* Ex.11
    Write the function DeleteProp that receives an object and a string, and returns the object after deleting the property with that given name
 */
-Prop = {
+Const Prop = {
   Name: "Artur",
   Surname: "Kemmerer",
   Age : 21
@@ -414,14 +414,13 @@ function GetMovieById(x) {
 /* Ex.17
     Write the function SumYears that returns the sum of the years the movie has been produced
 */
+
 /* Ex.18
     Write the function SearchMovie that receives a string and returns all the movies with that string in the title
 */
 function SearchMovie(x) {
-  let result = movies.filter(obj => {
-    return obj.Title === x
-  })
-  return result
+  for (let i = 0; i < movies.length; i++) {
+  }
 }
 
 console.log(SearchMovie("Avengers: Endgame"))
@@ -443,7 +442,13 @@ console.log(SearchMovie("Avengers: Endgame"))
   **
   ***
 */
-
+function HalfTree(h) {
+  let char = "*"
+  for (x = 1; x <= h; x++){
+    console.log(char.repeat(x))
+  }
+}
+HalfTree(5)
 /* Ex.22 
   Create a function Tree that receives the height and creates an "*" tree with that height
   Example: 
@@ -452,7 +457,14 @@ console.log(SearchMovie("Avengers: Endgame"))
    *** 
   *****
 */
-
+function Tree(num) {
+  let char = "*"
+  let space = " "
+  for(x = 1; x <= num; x++){
+    console.log(space.repeat(num-x) + char.repeat(x * 2 - 1))
+  }
+}
+//Tree(100)
 /* Ex.23
   Create a function IsItPrime that receives a number and return true if the number is a prime number
 */
